@@ -1,0 +1,210 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2aq3tufwjgot"]
+
+[ext_resource type="Script" path="res://viewzone.gd" id="1_uvyn5"]
+[ext_resource type="Environment" uid="uid://dxdtl580m5kl0" path="res://viewzone.tres" id="2_1clxr"]
+[ext_resource type="Material" uid="uid://bbrlsj4w44wc5" path="res://glow.tres" id="2_aavrc"]
+[ext_resource type="PackedScene" uid="uid://dedmbhdubmla7" path="res://testanimal.tscn" id="4_6l8dg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g7ec4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdeop"]
+material = ExtResource("2_aavrc")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_58qks"]
+
+[sub_resource type="Animation" id="Animation_y4sby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camerapivot/Camera3D:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camerapivot/Camera3D:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("camerapivot/Camera3D:environment:fog_enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("camerapivot/Camera3D:environment:fog_density")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("camerapivot/Camera3D:environment:volumetric_fog_density")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6b4pt"]
+resource_name = "fovswitch"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camerapivot/Camera3D:fov")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camerapivot/Camera3D:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("camerapivot/Camera3D:environment:fog_enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("camerapivot/Camera3D:environment:fog_density")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("camerapivot/Camera3D:environment:volumetric_fog_density")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cevao"]
+_data = {
+"RESET": SubResource("Animation_y4sby"),
+"fovswitch": SubResource("Animation_6b4pt")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tg73o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7du2x"]
+transparency = 1
+albedo_color = Color(0.407843, 0.72549, 1, 0.188235)
+roughness = 0.0
+
+[node name="viewzone" type="Node3D"]
+script = ExtResource("1_uvyn5")
+
+[node name="camerapivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55779, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="camerapivot"]
+transform = Transform3D(1, 0, 0, 0, 0.340823, 0.940128, 0, -0.940128, 0.340823, 0, 0.4159, 0)
+light_volumetric_fog_energy = 2.616
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="camerapivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.333)
+current = true
+
+[node name="MeshInstance3D" type="Area3D" parent="camerapivot/Camera3D"]
+transform = Transform3D(-0.1, 0, -3.01992e-05, 0, 0.1, 0, 1.50996e-08, 0, -200, 0, 0, -4.3163)
+visible = false
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="camerapivot/Camera3D/MeshInstance3D"]
+shape = SubResource("BoxShape3D_g7ec4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="camerapivot/Camera3D/MeshInstance3D"]
+mesh = SubResource("BoxMesh_mdeop")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 2.85939, 0)
+visible = false
+mesh = SubResource("CylinderMesh_58qks")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_1clxr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cevao")
+}
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(128.574, 0, 0, 0, 128.574, 0, 0, 0, 128.574, 0, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_tg73o")
+surface_material_override/0 = SubResource("StandardMaterial3D_7du2x")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-128, 0, 1.11901e-05, 0, -1, 0, -1.11901e-05, 0, -128, 0, -3.67702, 0)
+visible = false
+mesh = SubResource("PlaneMesh_tg73o")
+surface_material_override/0 = SubResource("StandardMaterial3D_7du2x")
+
+[node name="creature" parent="." instance=ExtResource("4_6l8dg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.66644, 0)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

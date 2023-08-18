@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://fkvsk7jlf4hy"]
+
+[ext_resource type="Script" path="res://testleg.gd" id="1_mxvbf"]
+[ext_resource type="Material" uid="uid://bbrlsj4w44wc5" path="res://glow.tres" id="2_1ygdn"]
+[ext_resource type="Material" uid="uid://bnu7abcg5e0s4" path="res://white.tres" id="3_8pder"]
+[ext_resource type="PackedScene" uid="uid://crkqgvyh0yrpe" path="res://mousechecker.tscn" id="3_xn5ip"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4q7dm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ouqys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6acuj"]
+size = Vector3(0.891858, 1.70771, 0.408673)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_inape"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_duq61"]
+size = Vector3(0.653676, 2.4575, 0.328713)
+
+[node name="testleg" type="Node3D"]
+script = ExtResource("1_mxvbf")
+
+[node name="hipjoint" type="Marker3D" parent="."]
+transform = Transform3D(0.897251, 0.441522, 0, -0.441198, 0.896592, 0.0383179, 0.0169186, -0.034381, 0.999266, 0, 1.6818, -0.022934)
+
+[node name="up" parent="hipjoint" instance=ExtResource("3_xn5ip")]
+transform = Transform3D(0.363, 7.65547e-06, 5.58794e-09, -2.70666e-08, -100, -1.49012e-08, -6.51926e-09, 6.67572e-06, -0.532, 0.283339, -49.6683, -0.0139892)
+visible = false
+
+[node name="down" parent="hipjoint" instance=ExtResource("3_xn5ip")]
+transform = Transform3D(0.363, 7.66292e-06, 5.58794e-09, -2.70375e-08, -100, -1.49012e-08, -6.98492e-09, 6.91414e-06, -0.532, -0.390472, -49.6363, 0.0162257)
+visible = false
+
+[node name="mousechecker" parent="hipjoint" instance=ExtResource("3_xn5ip")]
+transform = Transform3D(0.610822, 0.551959, 2.79397e-09, -49.9963, 0.0067437, -7.91624e-09, -1.07288e-06, -1.02445e-08, 0.19, 0.112339, -1.57466, -0.000140656)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hipjoint"]
+transform = Transform3D(0.793684, -1.60129e-07, 0, 6.35337e-08, 1.19003, 7.45058e-09, 4.65661e-09, -1.11759e-08, 0.942643, 0.0876704, -0.774609, -0.0184097)
+mesh = SubResource("CylinderMesh_4q7dm")
+surface_material_override/0 = ExtResource("3_8pder")
+
+[node name="glow" type="MeshInstance3D" parent="hipjoint"]
+transform = Transform3D(0.896588, 0, 0, 0, 2.1909, 0, 0, 0, 0.366815, 0.0876702, -0.774609, -0.0184097)
+visible = false
+mesh = SubResource("BoxMesh_ouqys")
+surface_material_override/0 = ExtResource("2_1ygdn")
+
+[node name="upperlegarea" type="Area3D" parent="hipjoint"]
+transform = Transform3D(0.999992, -0.00410146, 0, 0.00410146, 0.999992, 0, 0, 0, 1, 0.124904, -0.553339, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hipjoint/upperlegarea"]
+shape = SubResource("BoxShape3D_6acuj")
+
+[node name="elbow1" type="Marker3D" parent="hipjoint"]
+transform = Transform3D(0.473274, -0.880916, 0, 0.880916, 0.473274, 0, 0, 0, 1, 5.96046e-08, -1.81225, 0)
+
+[node name="up" parent="hipjoint/elbow1" instance=ExtResource("3_xn5ip")]
+transform = Transform3D(0.363, -0.123932, -3.63216e-08, -0.000449781, -99.9999, -3.35276e-08, -5.58794e-09, -9.53674e-07, -0.531999, 7.83801e-05, -50.4202, 0.0308454)
+visible = false
+
+[node name="down" parent="hipjoint/elbow1" instance=ExtResource("3_xn5ip")]
+transform = Transform3D(0.363, -0.134405, -4.00469e-08, -0.000487876, -99.9999, -3.72529e-08, -4.65661e-09, -3.33786e-06, -0.531999, -0.540345, -50.2998, 6.83889e-05)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hipjoint/elbow1"]
+transform = Transform3D(0.642892, 2.49711e-08, 1.86265e-09, -8.5769e-08, 1.01891, -5.58794e-09, 7.45058e-09, 1.49012e-08, 0.854571, -0.0242256, -0.886979, -0.0184097)
+mesh = SubResource("CylinderMesh_inape")
+surface_material_override/0 = ExtResource("3_8pder")
+
+[node name="glow" type="MeshInstance3D" parent="hipjoint/elbow1"]
+transform = Transform3D(0.642892, 0, 0, -2.98023e-08, 2.45934, 0, 0, 0, 0.232354, -0.0242256, -0.886979, -0.0184097)
+visible = false
+mesh = SubResource("BoxMesh_ouqys")
+surface_material_override/0 = ExtResource("2_1ygdn")
+
+[node name="lowerlegarea" type="Area3D" parent="hipjoint/elbow1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.872073, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hipjoint/elbow1/lowerlegarea"]
+shape = SubResource("BoxShape3D_duq61")
+
+[node name="mousechecker" parent="hipjoint/elbow1" instance=ExtResource("3_xn5ip")]
+transform = Transform3D(-1.41065e-05, 0.552, -4.80531e-09, -50, -1.55736e-07, -5.24651e-09, -1.38066e-06, 1.39607e-08, 0.19, 0, -1.56819, 0)
+visible = false
+
+[connection signal="directionup" from="hipjoint/up" to="." method="_on_up_directionup"]
+[connection signal="directiondown" from="hipjoint/down" to="." method="_on_down_directiondown"]
+[connection signal="mouse_entered" from="hipjoint/upperlegarea" to="." method="_mouseentered"]
+[connection signal="mouse_entered" from="hipjoint/upperlegarea" to="." method="_on_upperlegarea_mouse_entered"]
+[connection signal="mouse_exited" from="hipjoint/upperlegarea" to="." method="mouseexit"]
+[connection signal="directionup" from="hipjoint/elbow1/up" to="." method="_on_up_directionup"]
+[connection signal="directiondown" from="hipjoint/elbow1/down" to="." method="_on_down_directiondown"]
+[connection signal="mouse_entered" from="hipjoint/elbow1/lowerlegarea" to="." method="_on_lowerlegarea_mouse_entered"]
+[connection signal="mouse_exited" from="hipjoint/elbow1/lowerlegarea" to="." method="mouseexit"]

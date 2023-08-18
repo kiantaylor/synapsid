@@ -1,0 +1,10 @@
+[gd_resource type="Environment" format=3 uid="uid://dxdtl580m5kl0"]
+
+[resource]
+glow_enabled = true
+glow_intensity = 2.91
+fog_density = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1263
+volumetric_fog_albedo = Color(0.0705882, 0.529412, 0.772549, 1)
+volumetric_fog_detail_spread = 0.5

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://crkqgvyh0yrpe"]
+
+[ext_resource type="Script" path="res://mousechecker.gd" id="1_ryop4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4paxp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0to8r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djqg4"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.243137, 0.45098, 1, 0.309804)
+
+[node name="mousechecker" type="Area3D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_ryop4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501795, 0, 0)
+shape = SubResource("BoxShape3D_4paxp")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499376, 0, 0)
+mesh = SubResource("BoxMesh_0to8r")
+surface_material_override/0 = SubResource("StandardMaterial3D_djqg4")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
