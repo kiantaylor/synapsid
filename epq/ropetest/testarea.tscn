@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6psd6hnhtih"]
+
+[ext_resource type="Script" path="res://ropetest/testarea.gd" id="1_ld7du"]
+[ext_resource type="PackedScene" uid="uid://be2cywx3q4ivo" path="res://ropetest/staticpoint.tscn" id="1_t654w"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ld7du")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
+
+[node name="dynamicpointscount" type="HSlider" parent="."]
+offset_left = -2505.0
+offset_top = -1405.0
+offset_right = -2078.0
+offset_bottom = -1389.0
+scale = Vector2(2.58676, 3.3068)
+min_value = 1.0
+max_value = 50.0
+value = 50.0
+
+[node name="barlen" type="HSlider" parent="."]
+offset_left = -2500.0
+offset_top = -1246.0
+offset_right = -2073.0
+offset_bottom = -1230.0
+scale = Vector2(2.60879, 1.90208)
+min_value = 10.0
+max_value = 200.0
+value = 10.0
+
+[node name="force" type="HSlider" parent="."]
+offset_left = -2493.0
+offset_top = -1075.0
+offset_right = -2066.0
+offset_bottom = -1059.0
+scale = Vector2(2.60879, 1.90208)
+max_value = 1.0
+step = 0.01
+
+[node name="Label" type="Label" parent="."]
+offset_left = -2477.0
+offset_top = -1493.0
+offset_right = -2383.0
+offset_bottom = -1467.0
+scale = Vector2(2.95962, 2.41002)
+text = "point count:"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -2456.0
+offset_top = -1325.0
+offset_right = -2362.0
+offset_bottom = -1299.0
+scale = Vector2(2.72037, 2.23145)
+text = "bar length:"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -2470.0
+offset_top = -1175.0
+offset_right = -2376.0
+offset_bottom = -1149.0
+scale = Vector2(2.72037, 2.23145)
+text = "force applied"
+
+[node name="staticpoint" parent="." instance=ExtResource("1_t654w")]
+position = Vector2(-20, 0)
+
+[node name="staticpoint2" parent="." instance=ExtResource("1_t654w")]
+position = Vector2(20, 0)
+
+[connection signal="drag_ended" from="barlen" to="." method="_on_barlen_drag_ended"]
+[connection signal="value_changed" from="barlen" to="." method="_on_barlen_value_changed"]
+[connection signal="drag_ended" from="force" to="." method="_on_barlen_drag_ended"]
+[connection signal="value_changed" from="force" to="." method="_on_barlen_value_changed"]

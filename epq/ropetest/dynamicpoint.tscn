@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dila3yuvranv5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eqtts"]
+radius = 3.40147
+
+[sub_resource type="SphereMesh" id="SphereMesh_rhw4v"]
+
+[node name="dynamicpoint" type="StaticBody2D"]
+scale = Vector2(20, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eqtts")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(6, 6)
+mesh = SubResource("SphereMesh_rhw4v")
+
+[node name="bar" type="ColorRect" parent="."]
+visible = false
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 1.0

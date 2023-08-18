@@ -86,8 +86,8 @@ visible = false
 
 [connection signal="directionup" from="hipjoint/up" to="." method="_on_up_directionup"]
 [connection signal="directiondown" from="hipjoint/down" to="." method="_on_down_directiondown"]
-[connection signal="mouse_entered" from="hipjoint/upperlegarea" to="." method="_mouseentered"]
 [connection signal="mouse_entered" from="hipjoint/upperlegarea" to="." method="_on_upperlegarea_mouse_entered"]
+[connection signal="mouse_entered" from="hipjoint/upperlegarea" to="." method="_mouseentered"]
 [connection signal="mouse_exited" from="hipjoint/upperlegarea" to="." method="mouseexit"]
 [connection signal="directionup" from="hipjoint/elbow1/up" to="." method="_on_up_directionup"]
 [connection signal="directiondown" from="hipjoint/elbow1/down" to="." method="_on_down_directiondown"]

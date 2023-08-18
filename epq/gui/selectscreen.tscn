@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=3 uid="uid://byhx8t57ijp6o"]
+
+[ext_resource type="Script" path="res://gui/selectscreen.gd" id="1_jg624"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ge1mo"]
+
+[sub_resource type="Sky" id="Sky_wt4bl"]
+sky_material = SubResource("ProceduralSkyMaterial_ge1mo")
+
+[sub_resource type="Environment" id="Environment_w6qoo"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_wt4bl")
+volumetric_fog_enabled = true
+volumetric_fog_density = 1.0
+volumetric_fog_albedo = Color(0, 0.827451, 0.843137, 1)
+volumetric_fog_emission = Color(0, 0.827451, 0.843137, 1)
+
+[sub_resource type="Animation" id="Animation_epb3j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:volumetric_fog_emission_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hyf8t"]
+resource_name = "startup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:volumetric_fog_emission_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kg77m"]
+_data = {
+"RESET": SubResource("Animation_epb3j"),
+"startup": SubResource("Animation_hyf8t")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_7kgop"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_jg624")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w6qoo")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40529)
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kg77m")
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(24.1979, 0, 0, 0, 1, 0, 0, 0, 25.7631, 0, -2.70519, -5)
+mesh = SubResource("BoxMesh_7kgop")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 3.48341, 0, 0, 0, 1, 2.03068, -0.548286, -2.82216)
+mesh = SubResource("BoxMesh_7kgop")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.694, 0, 0, 0, 5, 0, 0, 0, 1.694, -2.68738, 0, -5.78976)
+mesh = SubResource("BoxMesh_7kgop")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.498442, 0.803905, -0.324488, 0, 0.374299, 0.927308, 0.866923, -0.46221, 0.186567, 0, 0, 0)
+shadow_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1163.0
+offset_bottom = 659.0
+color = Color(0, 0.827451, 0.843137, 1)

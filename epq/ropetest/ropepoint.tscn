@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1rmgobtio8c3"]
+
+[ext_resource type="Script" path="res://ropetest/ropepoint.gd" id="1_xeohe"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0cowk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_27xvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db43k"]
+size = Vector2(57, 13)
+
+[node name="ropepoint" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 4
+floor_stop_on_slope = false
+script = ExtResource("1_xeohe")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_0cowk")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+z_index = -5
+position = Vector2(24.7317, 2.38419e-07)
+scale = Vector2(50.5366, 16)
+mesh = SubResource("BoxMesh_27xvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_db43k")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = -1.57116
+target_position = Vector2(-0.0196361, 54)
+collision_mask = 2
+hit_from_inside = true

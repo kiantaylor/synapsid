@@ -1,0 +1,188 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2e8066cejagg"]
+
+[ext_resource type="PackedScene" uid="uid://c1rmgobtio8c3" path="res://ropetest/ropepoint.tscn" id="1_cfjke"]
+[ext_resource type="Script" path="res://ropetest/rope.gd" id="1_dlqdv"]
+[ext_resource type="Script" path="res://ropetest/Marker2D.gd" id="3_gewtu"]
+[ext_resource type="PackedScene" uid="uid://qugtfesv1ele" path="res://ropetest/square.tscn" id="4_6jsou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2njpb"]
+radius = 13.3417
+
+[sub_resource type="BoxMesh" id="BoxMesh_tfdc6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(17, -91)
+enabled = false
+zoom = Vector2(0.2, 0.2)
+
+[node name="rope" type="Node" parent="."]
+script = ExtResource("1_dlqdv")
+
+[node name="13" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-1229, -1187)
+
+[node name="14" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-1179, -1187)
+
+[node name="15" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-1129, -1187)
+
+[node name="16" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-1079, -1187)
+
+[node name="17" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-1029, -1187)
+
+[node name="18" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-979, -1187)
+
+[node name="19" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-930, -1185)
+
+[node name="20" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-880, -1185)
+
+[node name="21" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-830, -1185)
+
+[node name="22" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-780, -1185)
+
+[node name="23" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-730, -1185)
+
+[node name="24" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-680, -1185)
+
+[node name="7" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-627, -1187)
+
+[node name="8" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-577, -1187)
+
+[node name="9" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-527, -1187)
+
+[node name="10" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-477, -1187)
+
+[node name="11" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-427, -1187)
+
+[node name="12" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-377, -1187)
+
+[node name="1" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-328, -1185)
+
+[node name="2" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-278, -1185)
+
+[node name="3" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-228, -1185)
+
+[node name="4" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-178, -1185)
+
+[node name="5" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-128, -1185)
+
+[node name="6" parent="rope" instance=ExtResource("1_cfjke")]
+position = Vector2(-78, -1185)
+
+[node name="Marker2D" type="CharacterBody2D" parent="rope"]
+position = Vector2(-22, -1185)
+rotation = 1.57913
+collision_layer = 3
+collision_mask = 4
+script = ExtResource("3_gewtu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rope/Marker2D"]
+shape = SubResource("CircleShape2D_2njpb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="rope/Marker2D"]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(43.9188, -47.5779)
+mesh = SubResource("BoxMesh_tfdc6")
+
+[node name="Camera2D" type="Camera2D" parent="rope/Marker2D"]
+rotation = 1.5708
+ignore_rotation = false
+zoom = Vector2(0.5, 0.5)
+
+[node name="square" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-719, -745)
+
+[node name="square2" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1369, -577)
+
+[node name="square3" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1573, -758)
+
+[node name="square4" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-699, -424)
+
+[node name="square5" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1268, -80)
+
+[node name="square6" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1975, -57)
+
+[node name="square7" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-2625, 111)
+
+[node name="square8" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-2829, -70)
+
+[node name="square9" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1955, 264)
+
+[node name="square10" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-2524, 608)
+
+[node name="square11" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-495, 623)
+
+[node name="square12" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1145, 791)
+
+[node name="square13" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1349, 610)
+
+[node name="square14" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-475, 944)
+
+[node name="square15" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-1044, 1288)
+
+[node name="square16" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(753, 55)
+
+[node name="square17" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(103, 223)
+
+[node name="square18" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(-101, 42)
+
+[node name="square19" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(773, 376)
+
+[node name="square20" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(204, 720)
+
+[node name="square21" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(2057, -593)
+
+[node name="square22" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(1407, -425)
+
+[node name="square23" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(1203, -606)
+
+[node name="square24" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(2077, -272)
+
+[node name="square25" parent="." instance=ExtResource("4_6jsou")]
+position = Vector2(1508, 72)

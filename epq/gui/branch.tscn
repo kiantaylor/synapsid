@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5a580o2tyx8h"]
+
+[ext_resource type="Material" uid="uid://rfyms1d5jjuc" path="res://whiteglow.tres" id="1_k0i38"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4atgj"]
+
+[node name="branch" type="Marker3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.191704, 0, 0, 0, 1, 0, 0, 0, 2.0022, 0, 0, -1.10172)
+mesh = SubResource("BoxMesh_4atgj")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("1_k0i38")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-7.77711e-09, 0, 3.82011, 0, 1, 0, -0.17792, 0, -1.66983e-07, 0, 0, -2.05584)
+mesh = SubResource("BoxMesh_4atgj")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("1_k0i38")
