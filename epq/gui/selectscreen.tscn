@@ -1,6 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://byhx8t57ijp6o"]
+[gd_scene load_steps=18 format=3 uid="uid://byhx8t57ijp6o"]
 
 [ext_resource type="Script" path="res://gui/selectscreen.gd" id="1_jg624"]
+[ext_resource type="ArrayMesh" uid="uid://cm32bsypts55o" path="res://assets/plynths/morganucodonPlynth/morganucodonplynth.obj" id="2_y22ut"]
+[ext_resource type="Texture2D" uid="uid://dlngfwv7078pt" path="res://assets/plynths/morganucodonPlynth/forestfloortexture1.png" id="3_mn5ud"]
+[ext_resource type="Texture2D" uid="uid://bdrwtrx547hj2" path="res://assets/plynths/morganucodonPlynth/treeTexture.png" id="4_sp6ej"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ge1mo"]
 
@@ -8,8 +11,8 @@
 sky_material = SubResource("ProceduralSkyMaterial_ge1mo")
 
 [sub_resource type="Environment" id="Environment_w6qoo"]
-background_mode = 2
-background_color = Color(1, 1, 1, 1)
+background_mode = 1
+background_color = Color(0, 0.827451, 0.843137, 1)
 sky = SubResource("Sky_wt4bl")
 volumetric_fog_enabled = true
 volumetric_fog_density = 1.0
@@ -101,6 +104,30 @@ _data = {
 "startup": SubResource("Animation_hyf8t")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwol8"]
+albedo_texture = ExtResource("3_mn5ud")
+roughness = 0.97
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24viw"]
+albedo_color = Color(0.254902, 0.372549, 0.25098, 1)
+roughness = 0.54
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2n6h"]
+albedo_color = Color(0.384314, 0.439216, 0.301961, 1)
+roughness = 0.61
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aln46"]
+albedo_texture = ExtResource("4_sp6ej")
+roughness = 0.58
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3v4d"]
+albedo_color = Color(0.65098, 0.564706, 0.4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdbk8"]
+albedo_color = Color(0.352941, 0.352941, 0.352941, 1)
+metallic = 0.12
+roughness = 0.67
+
 [sub_resource type="BoxMesh" id="BoxMesh_7kgop"]
 
 [node name="Node3D" type="Node3D"]
@@ -110,7 +137,7 @@ script = ExtResource("1_jg624")
 environment = SubResource("Environment_w6qoo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40529)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919215, 1.40529)
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -119,19 +146,28 @@ libraries = {
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(24.1979, 0, 0, 0, 1, 0, 0, 0, 25.7631, 0, -2.70519, -5)
-mesh = SubResource("BoxMesh_7kgop")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25892, -3.73664)
+mesh = ExtResource("2_y22ut")
+surface_material_override/0 = SubResource("StandardMaterial3D_kwol8")
+surface_material_override/1 = SubResource("StandardMaterial3D_24viw")
+surface_material_override/2 = SubResource("StandardMaterial3D_l2n6h")
+surface_material_override/3 = SubResource("StandardMaterial3D_aln46")
+surface_material_override/4 = SubResource("StandardMaterial3D_j3v4d")
+surface_material_override/5 = SubResource("StandardMaterial3D_jdbk8")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 3.48341, 0, 0, 0, 1, 2.03068, -0.548286, -2.82216)
+visible = false
 mesh = SubResource("BoxMesh_7kgop")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.694, 0, 0, 0, 5, 0, 0, 0, 1.694, -2.68738, 0, -5.78976)
+visible = false
 mesh = SubResource("BoxMesh_7kgop")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.498442, 0.803905, -0.324488, 0, 0.374299, 0.927308, 0.866923, -0.46221, 0.186567, 0, 0, 0)
+transform = Transform3D(0.702541, 0.706405, 0.0861818, -0.65493, 0.59442, 0.466618, 0.278393, -0.384261, 0.88025, 0, 0, 0)
+light_energy = 1.911
 shadow_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

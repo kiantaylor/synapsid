@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcxj7qgn11ym2"
+path="res://.godot/imported/morganucodonplynth.obj-32968fe6f6619ad9f95a53143ee1e5bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/morganucodonplynth.obj-32968fe6f6619ad9f95a53143ee1e5bd.mesh"]
+
+source_file="res://models/morganucodonplynth.obj"
+dest_files=["res://.godot/imported/morganucodonplynth.obj-32968fe6f6619ad9f95a53143ee1e5bd.mesh", "res://.godot/imported/morganucodonplynth.obj-32968fe6f6619ad9f95a53143ee1e5bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
