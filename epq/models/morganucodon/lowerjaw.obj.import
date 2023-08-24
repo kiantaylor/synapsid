@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://khnxj05fuow7"
+path="res://.godot/imported/lowerjaw.obj-7efd9c67c7908e3047e2db7f5835ff2e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lowerjaw.obj-7efd9c67c7908e3047e2db7f5835ff2e.mesh"]
+
+source_file="res://models/morganucodon/lowerjaw.obj"
+dest_files=["res://.godot/imported/lowerjaw.obj-7efd9c67c7908e3047e2db7f5835ff2e.mesh", "res://.godot/imported/lowerjaw.obj-7efd9c67c7908e3047e2db7f5835ff2e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,9 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://byhx8t57ijp6o"]
+[gd_scene load_steps=14 format=3 uid="uid://byhx8t57ijp6o"]
 
 [ext_resource type="Script" path="res://gui/selectscreen.gd" id="1_jg624"]
-[ext_resource type="ArrayMesh" uid="uid://cm32bsypts55o" path="res://assets/plynths/morganucodonPlynth/morganucodonplynth.obj" id="2_y22ut"]
-[ext_resource type="Texture2D" uid="uid://dlngfwv7078pt" path="res://assets/plynths/morganucodonPlynth/forestfloortexture1.png" id="3_mn5ud"]
-[ext_resource type="Texture2D" uid="uid://bdrwtrx547hj2" path="res://assets/plynths/morganucodonPlynth/treeTexture.png" id="4_sp6ej"]
+[ext_resource type="PackedScene" uid="uid://bgbwl31oamjcn" path="res://assets/plynths/morganucodonPlynth/morganucodon_plynth.tscn" id="2_qephq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ge1mo"]
 
@@ -13,122 +11,263 @@ sky_material = SubResource("ProceduralSkyMaterial_ge1mo")
 [sub_resource type="Environment" id="Environment_w6qoo"]
 background_mode = 1
 background_color = Color(0, 0.827451, 0.843137, 1)
+background_energy_multiplier = 1.2
 sky = SubResource("Sky_wt4bl")
-volumetric_fog_enabled = true
-volumetric_fog_density = 1.0
+fog_enabled = true
+fog_light_color = Color(0, 0.827451, 0.843137, 1)
+fog_light_energy = 1.54
+fog_sun_scatter = 0.32
+fog_density = 1.0
+volumetric_fog_density = 0.0
 volumetric_fog_albedo = Color(0, 0.827451, 0.843137, 1)
 volumetric_fog_emission = Color(0, 0.827451, 0.843137, 1)
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_unfe1"]
 
 [sub_resource type="Animation" id="Animation_epb3j"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
+tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WorldEnvironment:environment:volumetric_fog_emission_energy")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
-
-[sub_resource type="Animation" id="Animation_hyf8t"]
-resource_name = "startup"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:volumetric_fog_density")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 1.0, 0.0]
-}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WorldEnvironment:environment:volumetric_fog_emission_energy")
+tracks/1/path = NodePath("ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, 1.0]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:modulate")
+tracks/2/path = NodePath("Camera3D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.919215, 1.40529)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:fog_light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.54]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:fog_density")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:attributes:frustum_focus_distance")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D:attributes:exposure_multiplier")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_3c28j"]
+resource_name = "cameraSwitchL"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.919215, 1.40529), Vector3(-1.096, 0.919, 1.405), Vector3(0, 0.919215, 1.40529)]
+}
+
+[sub_resource type="Animation" id="Animation_qkxlx"]
+resource_name = "cameraSwitchR"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.919215, 1.40529), Vector3(1.0959, 0.919215, 1.40529), Vector3(0, 0.919215, 1.40529)]
+}
+
+[sub_resource type="Animation" id="Animation_hyf8t"]
+resource_name = "startup"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.54, 1.54]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:fog_density")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:fog_enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_cmej2"]
+resource_name = "zoom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.919215, 1.40529), Vector3(0, 2.02294, -8.75423)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:attributes:frustum_focus_distance")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:attributes:exposure_multiplier")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 30.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kg77m"]
 _data = {
 "RESET": SubResource("Animation_epb3j"),
-"startup": SubResource("Animation_hyf8t")
+"cameraSwitchL": SubResource("Animation_3c28j"),
+"cameraSwitchR": SubResource("Animation_qkxlx"),
+"startup": SubResource("Animation_hyf8t"),
+"zoom": SubResource("Animation_cmej2")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwol8"]
-albedo_texture = ExtResource("3_mn5ud")
-roughness = 0.97
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24viw"]
-albedo_color = Color(0.254902, 0.372549, 0.25098, 1)
-roughness = 0.54
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2n6h"]
-albedo_color = Color(0.384314, 0.439216, 0.301961, 1)
-roughness = 0.61
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aln46"]
-albedo_texture = ExtResource("4_sp6ej")
-roughness = 0.58
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3v4d"]
-albedo_color = Color(0.65098, 0.564706, 0.4, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdbk8"]
-albedo_color = Color(0.352941, 0.352941, 0.352941, 1)
-metallic = 0.12
-roughness = 0.67
-
-[sub_resource type="BoxMesh" id="BoxMesh_7kgop"]
+[sub_resource type="BoxMesh" id="BoxMesh_ndfgp"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_jg624")
@@ -138,6 +277,7 @@ environment = SubResource("Environment_w6qoo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919215, 1.40529)
+attributes = SubResource("CameraAttributesPhysical_unfe1")
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -145,32 +285,27 @@ libraries = {
 "": SubResource("AnimationLibrary_kg77m")
 }
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25892, -3.73664)
-mesh = ExtResource("2_y22ut")
-surface_material_override/0 = SubResource("StandardMaterial3D_kwol8")
-surface_material_override/1 = SubResource("StandardMaterial3D_24viw")
-surface_material_override/2 = SubResource("StandardMaterial3D_l2n6h")
-surface_material_override/3 = SubResource("StandardMaterial3D_aln46")
-surface_material_override/4 = SubResource("StandardMaterial3D_j3v4d")
-surface_material_override/5 = SubResource("StandardMaterial3D_jdbk8")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 3.48341, 0, 0, 0, 1, 2.03068, -0.548286, -2.82216)
-visible = false
-mesh = SubResource("BoxMesh_7kgop")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.694, 0, 0, 0, 5, 0, 0, 0, 1.694, -2.68738, 0, -5.78976)
-visible = false
-mesh = SubResource("BoxMesh_7kgop")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.702541, 0.706405, 0.0861818, -0.65493, 0.59442, 0.466618, 0.278393, -0.384261, 0.88025, 0, 0, 0)
 light_energy = 1.911
 shadow_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1163.0
-offset_bottom = 659.0
+offset_left = -12.0
+offset_top = -40.0
+offset_right = 1190.0
+offset_bottom = 670.0
+scale = Vector2(2.1291, 2.02473)
 color = Color(0, 0.827451, 0.843137, 1)
+
+[node name="plynths" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.218)
+
+[node name="morganucodonPlynth" parent="plynths" instance=ExtResource("2_qephq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0519, -5.11196)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="plynths"]
+transform = Transform3D(1.85384, 0, 0, 0, 5.76269, 0, 0, 0, 1.85384, 20, 2.29992, -5)
+mesh = SubResource("BoxMesh_ndfgp")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

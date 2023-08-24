@@ -1,0 +1,144 @@
+[gd_scene load_steps=17 format=3 uid="uid://bgbwl31oamjcn"]
+
+[ext_resource type="ArrayMesh" uid="uid://cm32bsypts55o" path="res://assets/plynths/morganucodonPlynth/morganucodonplynth.obj" id="1_xpeb6"]
+[ext_resource type="Script" path="res://assets/plynths/morganucodonPlynth/morganucodon_plynth.gd" id="1_xyrw7"]
+[ext_resource type="Texture2D" uid="uid://dlngfwv7078pt" path="res://assets/plynths/morganucodonPlynth/forestfloortexture1.png" id="2_cgv5e"]
+[ext_resource type="Texture2D" uid="uid://bdrwtrx547hj2" path="res://assets/plynths/morganucodonPlynth/treeTexture.png" id="3_aokm8"]
+[ext_resource type="ArrayMesh" uid="uid://crjir7bg8vavq" path="res://assets/plynths/morganucodonPlynth/text.obj" id="5_thxkc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwol8"]
+albedo_texture = ExtResource("2_cgv5e")
+roughness = 0.97
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24viw"]
+albedo_color = Color(0.254902, 0.372549, 0.25098, 1)
+roughness = 0.54
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l2n6h"]
+albedo_color = Color(0.384314, 0.439216, 0.301961, 1)
+roughness = 0.61
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aln46"]
+albedo_texture = ExtResource("3_aokm8")
+roughness = 0.58
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3v4d"]
+albedo_color = Color(0.65098, 0.564706, 0.4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdbk8"]
+albedo_color = Color(0.352941, 0.352941, 0.352941, 1)
+metallic = 0.12
+roughness = 0.67
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hrya"]
+metallic = 1.0
+roughness = 0.43
+emission = Color(0, 0.827451, 0.827451, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3crng"]
+height = 6.9012
+radius = 1.65652
+
+[sub_resource type="Animation" id="Animation_v7xb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("light:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(9.53674e-07, 5.01898, 0.927718)]
+}
+
+[sub_resource type="Animation" id="Animation_vasfg"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.272746, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("light:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(9.53674e-07, 5.01898, 0.927718), Vector3(0, 5.3, 0.928)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvaw8"]
+_data = {
+"RESET": SubResource("Animation_v7xb4"),
+"idle": SubResource("Animation_vasfg")
+}
+
+[node name="morganucodonPlynth" type="Marker3D"]
+script = ExtResource("1_xyrw7")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("1_xpeb6")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_kwol8")
+surface_material_override/1 = SubResource("StandardMaterial3D_24viw")
+surface_material_override/2 = SubResource("StandardMaterial3D_l2n6h")
+surface_material_override/3 = SubResource("StandardMaterial3D_aln46")
+surface_material_override/4 = SubResource("StandardMaterial3D_j3v4d")
+surface_material_override/5 = SubResource("StandardMaterial3D_jdbk8")
+
+[node name="mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.371624, 0, 0, 0, 0.371624, 0, 0, 0, 0.371624, 0, 3.12107, 1.16829)
+layers = 2
+mesh = ExtResource("5_thxkc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5hrya")
+
+[node name="light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.272767, 0.96208, 0, -0.96208, 0.272767, 9.53674e-07, 5.01898, 0.927718)
+visible = false
+light_color = Color(0.52549, 0.898039, 1, 1)
+light_energy = 16.0
+shadow_enabled = true
+omni_range = 5.70523
+
+[node name="clickbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="clickbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.81119, 0)
+shape = SubResource("CylinderShape3D_3crng")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vvaw8")
+}
+
+[connection signal="mouse_entered" from="clickbox" to="." method="_on_clickbox_mouse_entered"]
+[connection signal="mouse_exited" from="clickbox" to="." method="_on_clickbox_mouse_exited"]
