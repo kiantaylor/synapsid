@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://sx0ss3lesy06"
+path="res://.godot/imported/vertabrae2.obj-213f2e6ed75b687b5c5d996c297a6394.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vertabrae2.obj-213f2e6ed75b687b5c5d996c297a6394.mesh"]
+
+source_file="res://models/morganucodon/vertabrae2.obj"
+dest_files=["res://.godot/imported/vertabrae2.obj-213f2e6ed75b687b5c5d996c297a6394.mesh", "res://.godot/imported/vertabrae2.obj-213f2e6ed75b687b5c5d996c297a6394.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

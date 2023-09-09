@@ -22,6 +22,7 @@ func _input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	get_node('anchor').rotate_x(0.01)
 	#3d cursor
 	camRotationPos=get_node("pivot/Camera3D").position.rotated(Vector3(1,0,0),get_node('pivot').rotation.x)
 	camRotationPos=camRotationPos.rotated(Vector3(0,1,0),get_node('pivot').rotation.y)
