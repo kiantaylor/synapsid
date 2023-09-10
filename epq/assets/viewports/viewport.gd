@@ -7,6 +7,8 @@ var camRotationPos=Vector3()
 var mouse=Vector2()
 var rotateMouse=Vector3(0,0,0)
 var pointerRotation=Vector3(0,0,0)
+var selectedbone=null
+signal clearHover(ignore)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("AnimationPlayer").play('startup')
@@ -75,3 +77,13 @@ func _process(delta):
 		campos+=0.3
 	elif campos>6:
 		campos-=0.3
+
+
+func bonehovered(node):
+	emit_signal('clearHover',node)
+
+
+
+
+func boneselected(node):
+	selectedbone=node
