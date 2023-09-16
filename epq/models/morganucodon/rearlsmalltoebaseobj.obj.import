@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fsbbmxim4j4j"
+path="res://.godot/imported/rearlsmalltoebaseobj.obj-d608ac06321902d4c4c1b1f5db7283bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rearlsmalltoebaseobj.obj-d608ac06321902d4c4c1b1f5db7283bd.mesh"]
+
+source_file="res://models/morganucodon/rearlsmalltoebaseobj.obj"
+dest_files=["res://.godot/imported/rearlsmalltoebaseobj.obj-d608ac06321902d4c4c1b1f5db7283bd.mesh", "res://.godot/imported/rearlsmalltoebaseobj.obj-d608ac06321902d4c4c1b1f5db7283bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

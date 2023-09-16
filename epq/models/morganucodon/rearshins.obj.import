@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://be8kcr3g848fn"
+path="res://.godot/imported/rearshins.obj-2ea21ab57fa5b7886516067abf4ec175.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rearshins.obj-2ea21ab57fa5b7886516067abf4ec175.mesh"]
+
+source_file="res://models/morganucodon/rearshins.obj"
+dest_files=["res://.godot/imported/rearshins.obj-2ea21ab57fa5b7886516067abf4ec175.mesh", "res://.godot/imported/rearshins.obj-2ea21ab57fa5b7886516067abf4ec175.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

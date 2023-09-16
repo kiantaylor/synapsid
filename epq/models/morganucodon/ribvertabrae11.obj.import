@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drrsilmafj75g"
+path="res://.godot/imported/ribvertabrae11.obj-ab34bb7ca64b11c4ff349d92eddef106.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ribvertabrae11.obj-ab34bb7ca64b11c4ff349d92eddef106.mesh"]
+
+source_file="res://models/morganucodon/ribvertabrae11.obj"
+dest_files=["res://.godot/imported/ribvertabrae11.obj-ab34bb7ca64b11c4ff349d92eddef106.mesh", "res://.godot/imported/ribvertabrae11.obj-ab34bb7ca64b11c4ff349d92eddef106.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

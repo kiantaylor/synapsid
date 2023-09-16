@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://k8whxst5keu4"
+path="res://.godot/imported/rearfeet.obj-6d845226b92711ec18dbbe9a42e52c0b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rearfeet.obj-6d845226b92711ec18dbbe9a42e52c0b.mesh"]
+
+source_file="res://models/morganucodon/rearfeet.obj"
+dest_files=["res://.godot/imported/rearfeet.obj-6d845226b92711ec18dbbe9a42e52c0b.mesh", "res://.godot/imported/rearfeet.obj-6d845226b92711ec18dbbe9a42e52c0b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

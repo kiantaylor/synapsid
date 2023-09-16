@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf0i6xl1nuapv"
+path="res://.godot/imported/forearm.obj-cc107540f27a414bf23ffdc0923e8019.mesh"
+
+[deps]
+
+files=["res://.godot/imported/forearm.obj-cc107540f27a414bf23ffdc0923e8019.mesh"]
+
+source_file="res://models/morganucodon/forearm.obj"
+dest_files=["res://.godot/imported/forearm.obj-cc107540f27a414bf23ffdc0923e8019.mesh", "res://.godot/imported/forearm.obj-cc107540f27a414bf23ffdc0923e8019.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

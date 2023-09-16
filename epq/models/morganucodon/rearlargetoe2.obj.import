@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ciy7jn74i264b"
+path="res://.godot/imported/rearlargetoe2.obj-04aa6587678abf2dea7560193e1b3403.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rearlargetoe2.obj-04aa6587678abf2dea7560193e1b3403.mesh"]
+
+source_file="res://models/morganucodon/rearlargetoe2.obj"
+dest_files=["res://.godot/imported/rearlargetoe2.obj-04aa6587678abf2dea7560193e1b3403.mesh", "res://.godot/imported/rearlargetoe2.obj-04aa6587678abf2dea7560193e1b3403.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
