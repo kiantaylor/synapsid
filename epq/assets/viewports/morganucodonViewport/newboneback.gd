@@ -33,10 +33,12 @@ func _process(delta):
 			
 		
 			selected=true
+			get_child(0).set_surface_override_material(0,load("res://glow.tres"))
 			get_node("MeshInstance3D2").mesh.surface_set_material(0,load("res://glow.tres"))
 		elif Input.is_action_just_pressed("leftclick"):
 			selected=false
-			get_node("MeshInstance3D2").mesh.surface_set_material(0,load("res://bone.tres"))
+			
+			get_child(0).set_surface_override_material(0,load("res://bone.tres"))
 		if selected:
 			if Input.is_action_pressed("bonedown"):
 				rotate_x(0.05)

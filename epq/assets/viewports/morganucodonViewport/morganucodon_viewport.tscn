@@ -150,6 +150,46 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(0, -276)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("controlbox:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_kfype"]
+resource_name = "dialogue"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("namebox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, -276), Vector2(30, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("controlbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, 30), Vector2(30, 336)]
+}
 
 [sub_resource type="Animation" id="Animation_umyja"]
 resource_name = "startup"
@@ -225,22 +265,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-1, 1080), Vector2(2386, 1080.02)]
-}
-
-[sub_resource type="Animation" id="Animation_kfype"]
-resource_name = "dialogue"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("namebox:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(30, -276), Vector2(30, 30)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1843w"]
@@ -867,6 +891,7 @@ surface_material_override/0 = ExtResource("6_thilh")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0225037, -0.0354543, -0.0231036)
+visible = false
 shape = SubResource("ConvexPolygonShape3D_a7eof")
 
 [node name="vertabrae6" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3"]
@@ -911,16 +936,16 @@ shape = SubResource("ConvexPolygonShape3D_yqfvk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154865, -0.399472, -5.96046e-08)
 script = ExtResource("2_myrqk")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder/leftupperarm"]
+transform = Transform3D(0.840529, -0.541767, 0, 0.496057, 0.769611, -0.402028, 0.217805, 0.337916, 0.915628, -0.0315813, -0.017557, 0.166705)
+mesh = ExtResource("30_cjo1t")
+surface_material_override/0 = ExtResource("5_q0egy")
+
 [node name="Area3D" type="Area3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder/leftupperarm"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder/leftupperarm/Area3D"]
 transform = Transform3D(0.840529, -0.541767, 0, 0.496057, 0.769611, -0.402028, 0.217805, 0.337916, 0.915628, -0.0315813, -0.017557, 0.166705)
 shape = SubResource("ConvexPolygonShape3D_ghvox")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder/leftupperarm"]
-transform = Transform3D(0.840529, -0.541767, 0, 0.496057, 0.769611, -0.402028, 0.217805, 0.337916, 0.915628, -0.0315813, -0.017557, 0.166705)
-mesh = ExtResource("30_cjo1t")
-surface_material_override/0 = ExtResource("5_q0egy")
 
 [node name="leftforearm" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder/leftupperarm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128948, 0.373156)
@@ -1303,16 +1328,16 @@ shape = SubResource("ConvexPolygonShape3D_yqfvk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154865, -0.399472, -5.96046e-08)
 script = ExtResource("2_myrqk")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder2/leftupperarm"]
+transform = Transform3D(0.840529, -0.541767, 3.72529e-09, 0.496057, 0.769611, -0.402028, 0.217805, 0.337916, 0.915628, -0.0315813, -0.017557, 0.166705)
+mesh = ExtResource("30_cjo1t")
+surface_material_override/0 = ExtResource("5_q0egy")
+
 [node name="Area3D" type="Area3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder2/leftupperarm"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder2/leftupperarm/Area3D"]
 transform = Transform3D(0.840529, -0.541767, 0, 0.496057, 0.769611, -0.402028, 0.217805, 0.337916, 0.915628, -0.0315813, -0.017557, 0.166705)
 shape = SubResource("ConvexPolygonShape3D_ghvox")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder2/leftupperarm"]
-transform = Transform3D(0.840529, -0.541767, 0, 0.496057, 0.769611, -0.402028, 0.217805, 0.337916, 0.915628, -0.0315813, -0.017557, 0.166705)
-mesh = ExtResource("30_cjo1t")
-surface_material_override/0 = ExtResource("5_q0egy")
 
 [node name="leftforearm" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder2/leftupperarm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128948, 0.373156)
@@ -3025,12 +3050,14 @@ offset_bottom = -10.0
 color = Color(0.109804, 0.109804, 0.109804, 0.717647)
 
 [node name="name" type="Label" parent="namebox"]
+layout_mode = 0
 offset_left = 26.0
 offset_top = 17.0
 offset_right = 67.0
 offset_bottom = 43.0
 
 [node name="description" type="Label" parent="namebox"]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 50.0
 offset_right = 431.0
@@ -3044,6 +3071,50 @@ offset_left = -4.0
 offset_top = -7.0
 offset_right = 457.0
 offset_bottom = 273.0
+color = Color(1, 1, 1, 0.298039)
+
+[node name="controlbox" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 481.0
+offset_bottom = 395.0
+color = Color(0.109804, 0.109804, 0.109804, 0.717647)
+
+[node name="name" type="Label" parent="controlbox"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 17.0
+offset_right = 67.0
+offset_bottom = 43.0
+text = "Controls:"
+
+[node name="description" type="Label" parent="controlbox"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 431.0
+offset_bottom = 128.0
+text = "arrow keys rotate camera
+
+W rotates bones upwards
+
+S rotates bones downwards
+
+A moves bones left
+
+D moves bones right
+
+Esc leaves the window"
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="controlbox"]
+z_index = -1
+layout_mode = 0
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 458.0
+offset_bottom = 372.0
 color = Color(1, 1, 1, 0.298039)
 
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15" method="_on_morganucodon_viewport_declare"]
