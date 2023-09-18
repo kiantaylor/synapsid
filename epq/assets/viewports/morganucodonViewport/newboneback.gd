@@ -2,6 +2,7 @@ extends Marker3D
 var rootnode=null
 var hover=false
 var readyup=false
+var parent1
 var selected=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +13,24 @@ func _ready():
 func _process(delta):
 	
 		if Input.is_action_just_pressed("leftclick") and hover:
-			print('click')
+			parent1=get_parent()
+			while parent1.name!="morganucodonViewport":
+				parent1=parent1.get_parent()
+			if has_meta('description'):
+				if not parent1.dialogue:
+					parent1.get_node('AnimationPlayer').play('dialogue')
+					parent1.dialogue=true
+				
+				print('meta')
+				parent1.get_node('namebox/description').text=get_meta('description')
+			else:
+				if parent1.dialogue:
+					parent1.dialogue=false
+					parent1.get_node('AnimationPlayer').play_backwards('dialogue')
+			if has_meta('displayName'):
+				print('meta')
+				parent1.get_node('namebox/name').text=get_meta('displayName')
+			
 		
 			selected=true
 			get_node("MeshInstance3D2").mesh.surface_set_material(0,load("res://glow.tres"))

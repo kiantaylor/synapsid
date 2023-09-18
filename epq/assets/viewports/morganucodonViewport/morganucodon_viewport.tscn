@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://y2ckfosy0add"]
+[gd_scene load_steps=93 format=3 uid="uid://y2ckfosy0add"]
 
 [ext_resource type="Script" path="res://assets/viewports/viewport.gd" id="1_lfuw6"]
 [ext_resource type="Script" path="res://assets/viewports/morganucodonViewport/newbone.gd" id="2_myrqk"]
@@ -138,10 +138,22 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(-1, 1080)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("namebox:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -276)]
+}
 
 [sub_resource type="Animation" id="Animation_umyja"]
 resource_name = "startup"
-length = 1.8
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -161,10 +173,10 @@ tracks/1/path = NodePath("ColorRect2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 216), Vector2(0, 216), Vector2(2386, 216)]
+"values": [Vector2(0, 216), Vector2(2386, 216)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -173,10 +185,10 @@ tracks/2/path = NodePath("ColorRect3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 432), Vector2(0, 432), Vector2(0, 432), Vector2(-2386, 432)]
+"values": [Vector2(0, 432), Vector2(-2386, 432)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -185,10 +197,10 @@ tracks/3/path = NodePath("ColorRect4:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-3, 648), Vector2(-3, 648), Vector2(-3, 648), Vector2(-3, 648), Vector2(2386, 648)]
+"values": [Vector2(-3, 648), Vector2(2386, 648)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -197,10 +209,10 @@ tracks/4/path = NodePath("ColorRect5:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, 864), Vector2(-1, 864), Vector2(-1, 864), Vector2(-1, 864), Vector2(-1, 864), Vector2(-2386, 864)]
+"values": [Vector2(-1, 864), Vector2(-2386, 864)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -209,15 +221,32 @@ tracks/5/path = NodePath("ColorRect6:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, 1080), Vector2(-1, 1080), Vector2(-1, 1080), Vector2(-1, 1080), Vector2(-1, 1080), Vector2(-1, 1080), Vector2(2386, 1080.02)]
+"values": [Vector2(-1, 1080), Vector2(2386, 1080.02)]
+}
+
+[sub_resource type="Animation" id="Animation_kfype"]
+resource_name = "dialogue"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("namebox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(30, -276), Vector2(30, 30)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1843w"]
 _data = {
 "RESET": SubResource("Animation_5j3tg"),
+"dialogue": SubResource("Animation_kfype"),
 "startup": SubResource("Animation_umyja")
 }
 
@@ -864,6 +893,8 @@ shape = SubResource("ConvexPolygonShape3D_r68rg")
 [node name="leftshoulder" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179577, 0, 0)
 script = ExtResource("2_myrqk")
+metadata/displayName = "Left Scapula"
+metadata/description = ""
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209959, -0.152724, -0.0270585)
@@ -1252,8 +1283,10 @@ transform = Transform3D(0.766807, 0.61744, -0.175436, -0.577809, 0.783017, 0.230
 shape = SubResource("ConvexPolygonShape3D_vpxkp")
 
 [node name="leftshoulder2" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6"]
-transform = Transform3D(-0.934743, 0, 0, 0, 1, 0, 0, 0, 1, 0.253031, 0, 0)
+transform = Transform3D(-0.93223, 0.073273, 0, 0.0684914, 0.997312, 0, 0, 0, 1, 0.253031, 0, 0)
 script = ExtResource("2_myrqk")
+metadata/displayName = "Right Scapula"
+metadata/description = ""
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/leftshoulder2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209959, -0.152724, -0.0270585)
@@ -1747,6 +1780,8 @@ shape = SubResource("ConvexPolygonShape3D_r68rg")
 
 [node name="skull" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/vertabrae5/vertabrae4/vertabrae3/vertabrae2/vertabrae1"]
 script = ExtResource("2_myrqk")
+metadata/description = "This contains the brain and eyes as well as the upper teeth and is the largest bone in the body. Morganucodon's has side facing eye sockets to look for predators suggesting it was prey rather than a predator itself.morganucodon's teeth pattern's display slower growth than other synapsids which suggests a suckling period and therefore milk production."
+metadata/displayName = "Skull"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/vertabrae5/vertabrae4/vertabrae3/vertabrae2/vertabrae1/skull"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209959, -0.166108, -1.16472)
@@ -1770,6 +1805,8 @@ shape = SubResource("ConvexPolygonShape3D_nrchd")
 [node name="jaw" type="Marker3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/vertabrae5/vertabrae4/vertabrae3/vertabrae2/vertabrae1/skull"]
 transform = Transform3D(1, 0, 0, 0, 0.98803, -0.154262, 0, 0.154262, 0.98803, 0, -0.0632155, -0.339783)
 script = ExtResource("2_myrqk")
+metadata/displayName = "Dentary"
+metadata/description = "In modern mammals the dentary is known more colloquially as the lower jaw bone. However in premammalian synapsids earlier than morganucodon the dentary was one of four bones making up the lower jaw two of these bones, the articualr and quadrate moved into the inner ear and the angular became far smaller meaning only the dentary truly remained as the lower jaw."
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13/ribvertabrae12/ribvertabrae11/ribvertabrae10/ribvertabrae9/ribvertabrae8/ribvertabrae7/ribvertabrae6/ribvertabrae5/ribvertabrae4/ribvertabrae3/vertabrae6/vertabrae5/vertabrae4/vertabrae3/vertabrae2/vertabrae1/skull/jaw"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0209959, 0.039342, -0.0307896)
@@ -2961,6 +2998,7 @@ shape = SubResource("ConvexPolygonShape3D_7kjpt")
 [node name="vertabrae32" type="Marker3D" parent="skeleton/hipsCenter/backjoint/vertabrae16/vertabrae17/vertabrae18/vertabrae19/vertabrae20/vertabrae21/vertabrae22/vertabrae23/vertabrae24/vertabrae25/vertabrae26/vertabrae27/vertabrae28/vertabrae29/vertabrae30/vertabrae31"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0296046, 0.0917444)
 script = ExtResource("37_yak6i")
+metadata/description = ""
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="skeleton/hipsCenter/backjoint/vertabrae16/vertabrae17/vertabrae18/vertabrae19/vertabrae20/vertabrae21/vertabrae22/vertabrae23/vertabrae24/vertabrae25/vertabrae26/vertabrae27/vertabrae28/vertabrae29/vertabrae30/vertabrae31/vertabrae32"]
 transform = Transform3D(1, 0, 0, 0, 0.989399, -0.14522, 0, 0.14522, 0.989399, 0.0209959, -0.0354543, 0.0468678)
@@ -2980,6 +3018,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.98023e-08, 0.0739267)
 transform = Transform3D(1, 0, 0, 0, 0.928415, -0.371546, 0, 0.371546, 0.928415, 0.0209959, -0.0354542, -0.0270584)
 shape = SubResource("ConvexPolygonShape3D_7kjpt")
 
+[node name="namebox" type="ColorRect" parent="."]
+offset_top = -276.0
+offset_right = 451.0
+offset_bottom = -10.0
+color = Color(0.109804, 0.109804, 0.109804, 0.717647)
+
+[node name="name" type="Label" parent="namebox"]
+offset_left = 26.0
+offset_top = 17.0
+offset_right = 67.0
+offset_bottom = 43.0
+
+[node name="description" type="Label" parent="namebox"]
+offset_left = 25.0
+offset_top = 50.0
+offset_right = 431.0
+offset_bottom = 128.0
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="namebox"]
+z_index = -1
+layout_mode = 0
+offset_left = -4.0
+offset_top = -7.0
+offset_right = 457.0
+offset_bottom = 273.0
+color = Color(1, 1, 1, 0.298039)
+
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15" method="_on_morganucodon_viewport_declare"]
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14" method="_on_morganucodon_viewport_declare"]
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13" method="_on_morganucodon_viewport_declare"]
@@ -2990,6 +3056,9 @@ shape = SubResource("ConvexPolygonShape3D_7kjpt")
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8" method="_on_morganucodon_viewport_declare"]
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7" method="_on_morganucodon_viewport_declare"]
 [connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16" method="_on_morganucodon_viewport_declare"]
+[connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15" method="_on_morganucodon_viewport_declare"]
+[connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14" method="_on_morganucodon_viewport_declare"]
+[connection signal="declare" from="." to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/vertabrae13/vertabrae12/vertabrae11/vertabrae10/vertabrae9/vertabrae8/vertabrae7/ribvertabrae16/ribvertabrae15/ribvertabrae14/ribvertabrae13" method="_on_morganucodon_viewport_declare"]
 [connection signal="mouse_entered" from="skeleton/hipsCenter/frontjoint/vertabrae15/Area3D" to="skeleton/hipsCenter/frontjoint/vertabrae15" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="skeleton/hipsCenter/frontjoint/vertabrae15/Area3D" to="skeleton/hipsCenter/frontjoint/vertabrae15" method="_on_area_3d_mouse_exited"]
 [connection signal="mouse_entered" from="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14/Area3D" to="skeleton/hipsCenter/frontjoint/vertabrae15/vertabrae14" method="_on_area_3d_mouse_entered"]

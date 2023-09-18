@@ -1,6 +1,7 @@
 extends Node3D
 
 var pivotRotationy=PI/2.0
+var dialogue=false
 var pivotRotationx=0.0
 var campos=1.9
 var camRotationPos=Vector3()
