@@ -34,12 +34,13 @@ func _process(delta):
 			
 		
 			selected=true
-		elif Input.is_action_just_pressed("leftclick"):
+			get_child(0).set_surface_override_material(0,load("res://glow.tres"))
+		elif Input.is_action_just_pressed("leftclick") and selected:
 			selected=false
 			parent1=get_parent()
 			while parent1.name!="morganucodonViewport":
 				parent1=parent1.get_parent()
-			
+			get_child(0).set_surface_override_material(0,load("res://bone.tres"))
 		if selected:
 			if Input.is_action_pressed("bonedown"):
 				rotate_x(-0.05)
